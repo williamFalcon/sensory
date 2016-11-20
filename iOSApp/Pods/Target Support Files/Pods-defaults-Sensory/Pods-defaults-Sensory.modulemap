@@ -1,0 +1,6 @@
+framework module Pods_defaults_Sensory {
+  umbrella header "Pods-defaults-Sensory-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,21 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+
+## Settings
+inhibit_all_warnings!
+use_frameworks!
+
+abstract_target 'defaults' do
+
+    # Networking
+    pod 'Alamofire', '~> 4.0'
+    pod 'SDWebImage', '~>3.7.3'
+    pod 'SVProgressHUD'
+    pod 'SwiftyJSON'
+    pod 'Charts/Realm'
+
+    target '911'
+    target '911Tests'
+    target '911UITests'
+    target 'Sensory'
+end

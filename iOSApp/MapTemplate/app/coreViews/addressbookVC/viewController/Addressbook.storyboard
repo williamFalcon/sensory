@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Addressbook View Controller-->
+        <scene sceneID="EXJ-d0-ITe">
+            <objects>
+                <viewController storyboardIdentifier="AddressbookViewController" id="MUb-xb-2FL" customClass="AddressbookViewController" customModule="_11" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pku-m5-HW3"/>
+                        <viewControllerLayoutGuide type="bottom" id="RzK-9C-sbJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0T3-W8-N0c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8D-Hy-FgS" userLabel="leftNavButton">
+                                <rect key="frame" x="15" y="20" width="37" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="leftNavButtonPressed:" destination="MUb-xb-2FL" eventType="touchUpInside" id="H8b-ez-zWa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-Ar-T5R" userLabel="rightNavButton">
+                                <rect key="frame" x="555" y="20" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="rightNavButtonPressed:" destination="MUb-xb-2FL" eventType="touchUpInside" id="ypf-KL-y6Z"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Z8-Jq-45C">
+                                <rect key="frame" x="0.0" y="71" width="600" height="528.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MUb-xb-2FL" id="7TX-3H-wyV"/>
+                                    <outlet property="delegate" destination="MUb-xb-2FL" id="rDL-D8-WKp"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Emergency Addresses" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdV-xR-FdQ" userLabel="Title">
+                                <rect key="frame" x="246" y="25" width="107" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="WT9-hx-RTa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uaq-Ar-T5R" secondAttribute="trailing" constant="15" id="3bx-fB-mF0"/>
+                            <constraint firstItem="x8D-Hy-FgS" firstAttribute="leading" secondItem="0T3-W8-N0c" secondAttribute="leading" constant="15" id="5nm-zs-DAB"/>
+                            <constraint firstItem="fdV-xR-FdQ" firstAttribute="top" secondItem="0T3-W8-N0c" secondAttribute="top" constant="25" id="Ai3-2u-vhX"/>
+                            <constraint firstItem="x8D-Hy-FgS" firstAttribute="top" secondItem="pku-m5-HW3" secondAttribute="bottom" id="EdM-to-KJ3"/>
+                            <constraint firstItem="fdV-xR-FdQ" firstAttribute="centerX" secondItem="0T3-W8-N0c" secondAttribute="centerX" id="HGT-bD-8jL"/>
+                            <constraint firstItem="6Z8-Jq-45C" firstAttribute="top" secondItem="fdV-xR-FdQ" secondAttribute="bottom" constant="10" id="IeX-4r-csX"/>
+                            <constraint firstItem="uaq-Ar-T5R" firstAttribute="top" secondItem="pku-m5-HW3" secondAttribute="bottom" id="Q6g-Vp-IjT"/>
+                            <constraint firstAttribute="trailing" secondItem="6Z8-Jq-45C" secondAttribute="trailing" id="SpQ-Ln-qfT"/>
+                            <constraint firstItem="RzK-9C-sbJ" firstAttribute="top" secondItem="6Z8-Jq-45C" secondAttribute="bottom" id="wXG-8Q-c7Y"/>
+                            <constraint firstItem="6Z8-Jq-45C" firstAttribute="leading" secondItem="0T3-W8-N0c" secondAttribute="leading" id="xLS-Tm-C3x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftNavButton" destination="x8D-Hy-FgS" id="AjG-YP-xMu"/>
+                        <outlet property="rightNavButton" destination="uaq-Ar-T5R" id="ogE-rJ-8NR"/>
+                        <outlet property="tableView" destination="6Z8-Jq-45C" id="1MA-O5-m76"/>
+                        <outlet property="titleLabel" destination="fdV-xR-FdQ" id="2JB-kW-zso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqw-Uy-03D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="if2-w3-jtg">
+                    <connections>
+                        <action selector="viewTapped:" destination="MUb-xb-2FL" id="Zwy-su-5rt"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="193" y="375"/>
+        </scene>
+    </scenes>
+</document>
